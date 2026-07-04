@@ -1,0 +1,180 @@
+/* ===================================
+   TamannaVerse Premium
+   Love Intro CSS - Part 1
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    inline-size: 100%;
+    block-size: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* ===========================
+Canvas
+=========================== */
+
+#matrix {
+
+    position: fixed;
+
+    inset-block-start: 0;
+    inset-inline-start: 0;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    z-index: 1;
+
+}
+
+/* ===========================
+Overlay
+=========================== */
+
+.overlay {
+
+    position: absolute;
+
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    text-align: center;
+
+    inline-size: 100%;
+
+}
+
+/* ===========================
+Love Text
+=========================== */
+
+#loveText {
+
+    color: #ff004c;
+
+    font-size: 70px;
+
+    font-weight: bold;
+
+    opacity: 0;
+
+    text-shadow:
+
+        0 0 10px red,
+
+        0 0 25px deeppink,
+
+        0 0 45px hotpink,
+
+        0 0 70px red;
+
+}
+
+#loveText span {
+
+    display: block;
+
+    margin-block-start: 20px;
+
+    font-size: 45px;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 15px hotpink,
+
+        0 0 35px red;
+
+}
+
+/* ===========================
+Text Animation
+=========================== */
+
+.showText {
+
+    animation:
+
+        fadeText 3s ease forwards,
+
+        pulse 2s infinite;
+
+}
+
+@keyframes fadeText {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+@keyframes pulse {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:768px) {
+
+    #loveText {
+
+        font-size: 45px;
+
+    }
+
+    #loveText span {
+
+        font-size: 28px;
+
+    }
+
+}

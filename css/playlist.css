@@ -1,0 +1,251 @@
+/* ===========================
+   PLAYLIST PAGE
+=========================== */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+
+   font-family: Arial, Helvetica, sans-serif;
+
+   background: linear-gradient(135deg, #ff4d94, #ff99c8, #ffe6f2);
+
+   min-block-size: 100vh;
+
+   overflow-x: hidden;
+
+}
+
+#flowers,
+#hearts {
+
+   position: fixed;
+
+   inset-block-start: 0;
+   inset-inline-start: 0;
+
+   inline-size: 100%;
+   block-size: 100%;
+
+   pointer-events: none;
+
+   overflow: hidden;
+
+   z-index: 1;
+
+}
+
+.container {
+
+   position: relative;
+
+   z-index: 10;
+
+   inline-size: 90%;
+   max-inline-size: 900px;
+
+   margin: 50px auto;
+
+   padding: 40px;
+
+   background: rgba(255, 255, 255, .18);
+
+   backdrop-filter: blur(18px);
+
+   border-radius: 25px;
+
+   box-shadow: 0 0 30px rgba(255, 20, 147, .3);
+
+   text-align: center;
+
+}
+
+h1 {
+
+   font-size: 50px;
+
+   color: #ff0066;
+
+   margin-block-end: 10px;
+
+}
+
+.container p {
+
+   font-size: 22px;
+
+   color: white;
+
+   margin-block-end: 30px;
+
+}
+
+.song {
+
+   background: rgba(255, 255, 255, .15);
+
+   padding: 20px;
+
+   margin: 20px 0;
+
+   border-radius: 20px;
+
+   transition: .4s;
+
+}
+
+.song:hover {
+
+   transform: scale(1.03);
+
+   box-shadow: 0 0 20px hotpink;
+
+}
+
+.song h2 {
+
+   color: white;
+
+   margin-block-end: 10px;
+
+}
+
+.song p {
+
+   color: #fff;
+
+   margin-block-end: 15px;
+
+}
+
+audio {
+
+   inline-size: 100%;
+
+}
+
+.buttons {
+
+   margin-block-start: 30px;
+
+   display: flex;
+
+   justify-content: center;
+
+   gap: 20px;
+
+   flex-wrap: wrap;
+
+}
+
+.buttons button {
+
+   padding: 15px 35px;
+
+   border: none;
+
+   border-radius: 40px;
+
+   background: #ff1493;
+
+   color: white;
+
+   font-size: 18px;
+
+   cursor: pointer;
+
+   transition: .4s;
+
+}
+
+.buttons button:hover {
+
+   transform: scale(1.08);
+
+   box-shadow: 0 0 20px hotpink;
+
+}
+
+/* Flower */
+
+.flower {
+
+   position: absolute;
+
+   inset-block-start: -50px;
+
+   animation: flowerFall linear forwards;
+
+}
+
+@keyframes flowerFall {
+
+   0% {
+
+      transform: translateY(-50px);
+
+      opacity: 0;
+
+   }
+
+   100% {
+
+      transform: translateY(110vh);
+
+      opacity: 0;
+
+   }
+
+}
+
+/* Heart */
+
+.fHeart {
+
+   position: absolute;
+
+   inset-block-start: -40px;
+
+   animation: heartFall linear forwards;
+
+}
+
+@keyframes heartFall {
+
+   0% {
+
+      transform: translateY(-40px);
+
+      opacity: 0;
+
+   }
+
+   100% {
+
+      transform: translateY(110vh);
+
+      opacity: 0;
+
+   }
+
+}
+
+@media(max-width:768px) {
+
+   h1 {
+
+      font-size: 34px;
+
+   }
+
+   .container p {
+
+      font-size: 18px;
+
+   }
+
+}

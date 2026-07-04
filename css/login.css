@@ -1,0 +1,536 @@
+/* ===================================
+   TAMANNAVERSE PREMIUM
+   Login Page CSS
+   Part 1
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    block-size: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg,
+            #ff5fa2,
+            #ff89c5,
+            #ffc2df,
+            #ffdff1);
+
+    background-size: 400% 400%;
+
+    animation: bgMove 12s ease infinite;
+
+    position: relative;
+
+}
+
+@keyframes bgMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+/* =======================
+Floating Hearts Background
+======================= */
+
+.bg-hearts {
+
+    position: absolute;
+
+    inline-size: 100%;
+
+    block-size: 100%;
+
+    inset-inline-start: 0;
+
+    inset-block-start: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+.bg-hearts span {
+
+    position: absolute;
+
+    inset-block-end: -80px;
+
+    color: #ff2e7a;
+
+    font-size: 22px;
+
+    animation: heartFloat linear infinite;
+
+    opacity: .8;
+
+    text-shadow:
+        0 0 8px #ff2e7a,
+        0 0 18px #ff2e7a;
+
+}
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0) rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* =======================
+Glass Login Box
+======================= */
+
+.login-box {
+
+    inline-size: 420px;
+
+    max-inline-size: 92%;
+
+    padding: 45px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .25);
+
+    text-align: center;
+
+    box-shadow:
+
+        0 0 30px rgba(255, 20, 147, .35),
+
+        0 0 80px rgba(255, 105, 180, .25);
+
+    position: relative;
+
+    z-index: 10;
+
+    animation: boxEntry 1.4s ease;
+
+}
+
+@keyframes boxEntry {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(60px) scale(.8);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+.login-box h1 {
+
+    color: white;
+
+    font-size: 42px;
+
+    margin-block-end: 20px;
+
+    text-shadow:
+
+        0 0 10px hotpink,
+
+        0 0 25px deeppink;
+
+}
+
+.subtitle {
+
+    color: white;
+
+    line-height: 32px;
+
+    font-size: 18px;
+
+    margin-block-end: 35px;
+
+}
+
+/* =======================
+Input Box
+======================= */
+
+.login-box input {
+
+    inline-size: 100%;
+
+    padding: 18px 22px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, .20);
+
+    color: white;
+
+    font-size: 18px;
+
+    margin-block-end: 25px;
+
+    transition: .4s;
+
+    box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, .15);
+
+}
+
+.login-box input::placeholder {
+
+    color: #ffe3f0;
+
+}
+
+.login-box input:focus {
+
+    background: rgba(255, 255, 255, .28);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 15px hotpink,
+        0 0 35px deeppink;
+
+}
+
+/* =======================
+Unlock Button
+======================= */
+
+.login-box button {
+
+    inline-size: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(45deg,
+            #ff0080,
+            #ff4da6);
+
+    transition: .4s;
+
+    box-shadow:
+
+        0 0 20px rgba(255, 20, 147, .5);
+
+}
+
+.login-box button:hover {
+
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+
+        0 0 25px hotpink,
+
+        0 0 50px deeppink;
+
+}
+
+.login-box button:active {
+
+    transform: scale(.96);
+
+}
+
+/* =======================
+Error Text
+======================= */
+
+#error {
+
+    margin-block-start: 20px;
+
+    color: #fff4f8;
+
+    font-size: 17px;
+
+    min-block-size: 25px;
+
+    text-shadow: 0 0 8px red;
+
+}
+
+/* =======================
+Responsive
+======================= */
+
+@media(max-width:600px) {
+
+    .login-box {
+
+        inline-size: 92%;
+
+        padding: 30px;
+
+    }
+
+    .login-box h1 {
+
+        font-size: 32px;
+
+    }
+
+    .subtitle {
+
+        font-size: 16px;
+
+        line-height: 28px;
+
+    }
+
+    .login-box input {
+
+        font-size: 16px;
+
+    }
+
+    .login-box button {
+
+        font-size: 18px;
+
+    }
+
+}
+
+/* ==========================
+   Floating Sparkles
+========================== */
+
+.sparkle {
+
+    position: absolute;
+
+    inline-size: 8px;
+
+    block-size: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px hotpink;
+
+    animation: sparkle 5s linear infinite;
+
+    opacity: .8;
+
+}
+
+@keyframes sparkle {
+
+    0% {
+
+        transform:
+            translateY(0) scale(0);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh) scale(.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* ==========================
+   Login Box Hover Effect
+========================== */
+
+.login-box:hover {
+
+    transform: translateY(-5px);
+
+    transition: .5s;
+
+    box-shadow:
+
+        0 0 35px rgba(255, 20, 147, .6),
+
+        0 0 80px rgba(255, 105, 180, .45);
+
+}
+
+/* ==========================
+   Title Animation
+========================== */
+
+.login-box h1 {
+
+    animation: titleGlow 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes titleGlow {
+
+    from {
+
+        text-shadow:
+
+            0 0 10px hotpink,
+
+            0 0 20px deeppink;
+
+    }
+
+    to {
+
+        text-shadow:
+
+            0 0 20px white,
+
+            0 0 40px hotpink,
+
+            0 0 60px deeppink;
+
+    }
+
+}
+
+/* ==========================
+   Button Shine
+========================== */
+
+.login-box button {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.login-box button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset-block-start: 0;
+
+    inset-inline-start: -120%;
+
+    inline-size: 60%;
+
+    block-size: 100%;
+
+    background: rgba(255, 255, 255, .4);
+
+    transform: skewX(-25deg);
+
+}
+
+.login-box button:hover::before {
+
+    animation: shine .8s linear;
+
+}
+
+@keyframes shine {
+
+    100% {
+
+        inset-inline-start: 160%;
+
+    }
+
+}

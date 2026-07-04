@@ -1,0 +1,602 @@
+/* =========================================
+           DAY PAGE CSS - PART 1
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-block-size:100vh;
+
+}
+
+/* =========================
+        Hearts & Flowers
+========================= */
+
+#hearts,
+#flowers{
+
+    position:fixed;
+
+    inset-block-start:0;
+    inset-inline-start:0;
+
+    inline-size:100%;
+    block-size:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+/* =========================
+        Main Container
+========================= */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    inline-size:90%;
+
+    max-inline-size:1000px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 25px rgba(255,20,147,.35);
+
+}
+
+/* =========================
+          Heading
+========================= */
+
+h1{
+
+    text-align:center;
+
+    color:#ff4da6;
+
+    font-size:55px;
+
+    margin-block-end:20px;
+
+    text-shadow:
+
+    0 0 20px deeppink;
+
+}
+
+.day-date{
+
+    text-align:center;
+
+    font-size:24px;
+
+    color:#ffe4f1;
+
+    margin-block-end:35px;
+
+}
+
+/* =========================
+         Image
+========================= */
+
+.photo{
+
+    inline-size:320px;
+
+    block-size:320px;
+
+    margin:auto;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:4px solid hotpink;
+
+    box-shadow:
+
+    0 0 25px hotpink,
+
+    0 0 50px deeppink;
+
+    transition:.5s;
+
+}
+
+.photo img{
+
+    inline-size:100%;
+
+    block-size:100%;
+
+    object-fit:cover;
+
+}
+
+.photo:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* =========================
+       Memory Box
+========================= */
+
+.memory{
+
+    margin-block-start:40px;
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    line-height:38px;
+
+    font-size:22px;
+
+    color:white;
+
+    box-shadow:
+
+    0 0 20px rgba(255,20,147,.30);
+
+}
+
+.memory h2{
+
+    text-align:center;
+
+    color:#ff80bf;
+
+    margin-block-end:20px;
+
+    font-size:34px;
+
+}
+
+.memory p{
+
+    text-align:justify;
+
+}
+
+/* =========================================
+           DAY PAGE CSS - PART 2
+========================================= */
+
+/* =========================
+        Audio Player
+========================= */
+
+.music-box{
+
+    margin-block-start:35px;
+
+    text-align:center;
+
+}
+
+.music-box h3{
+
+    color:#ff80bf;
+
+    margin-block-end:15px;
+
+    font-size:28px;
+
+}
+
+.music-box audio{
+
+    inline-size:100%;
+
+    max-inline-size:500px;
+
+    border-radius:30px;
+
+}
+
+/* =========================
+          Buttons
+========================= */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-block-start:40px;
+
+}
+
+.btn{
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff1493;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    text-decoration:none;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    background:#ff4da6;
+
+    box-shadow:
+
+    0 0 20px hotpink,
+
+    0 0 40px deeppink;
+
+}
+
+/* =========================
+      Floating Hearts
+========================= */
+
+.fHeart{
+
+    position:absolute;
+
+    inset-block-start:-50px;
+
+    color:#ff4da6;
+
+    animation:heartFall linear forwards;
+
+    opacity:.8;
+
+}
+
+@keyframes heartFall{
+
+    0%{
+
+        transform:translateY(-50px) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(110vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================
+      Floating Flowers
+========================= */
+
+.flower{
+
+    position:absolute;
+
+    inset-block-start:-60px;
+
+    animation:flowerFall linear forwards;
+
+}
+
+@keyframes flowerFall{
+
+    0%{
+
+        transform:translateY(-60px);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================
+        Fade Animation
+========================= */
+
+.fade{
+
+    animation:fadeIn 1.2s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================
+           DAY PAGE CSS - PART 3
+========================================= */
+
+/* Quote Box */
+
+.quote{
+
+    margin-block-start:35px;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border-inline-start:5px solid hotpink;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    color:#ffe6f2;
+
+    font-style:italic;
+
+    box-shadow:0 0 20px rgba(255,20,147,.25);
+
+}
+
+/* Surprise Card */
+
+.surprise{
+
+    margin-block-start:40px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 0 25px rgba(255,20,147,.35);
+
+    transition:.4s;
+
+}
+
+.surprise:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 40px hotpink;
+
+}
+
+.surprise h3{
+
+    color:#ff80bf;
+
+    font-size:30px;
+
+    margin-block-end:15px;
+
+}
+
+.surprise p{
+
+    font-size:20px;
+
+    line-height:34px;
+
+}
+
+/* Footer */
+
+.footer{
+
+    text-align:center;
+
+    margin-block-start:50px;
+
+    color:#ffd6e7;
+
+    font-size:18px;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    inline-size:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff1493;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#222;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.container{
+
+inline-size:95%;
+
+padding:20px;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+.day-date{
+
+font-size:20px;
+
+}
+
+.photo{
+
+inline-size:250px;
+
+block-size:250px;
+
+}
+
+.memory{
+
+font-size:18px;
+
+line-height:30px;
+
+padding:20px;
+
+}
+
+.memory h2{
+
+font-size:28px;
+
+}
+
+.quote{
+
+font-size:18px;
+
+}
+
+.surprise h3{
+
+font-size:24px;
+
+}
+
+.surprise p{
+
+font-size:18px;
+
+}
+
+.btn{
+
+inline-size:100%;
+
+max-inline-size:260px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+}

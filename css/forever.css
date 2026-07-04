@@ -1,0 +1,319 @@
+/* ===================================
+        FOREVER TOGETHER
+=================================== */
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+body {
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        background: linear-gradient(180deg, #020111, #0b1d51, #1d3557, #000);
+
+        overflow: hidden;
+
+        min-block-size: 100vh;
+
+        color: white;
+
+}
+
+#stars,
+#flowers,
+#hearts,
+#fireworks {
+
+        position: fixed;
+
+        inset-block-start: 0;
+        inset-inline-start: 0;
+
+        inline-size: 100%;
+        block-size: 100%;
+
+        pointer-events: none;
+
+        overflow: hidden;
+
+}
+
+.container {
+
+        position: relative;
+
+        z-index: 10;
+
+        inline-size: 90%;
+        max-inline-size: 900px;
+
+        margin: 60px auto;
+
+        padding: 40px;
+
+        background: rgba(255, 255, 255, .08);
+
+        backdrop-filter: blur(20px);
+
+        border-radius: 30px;
+
+        text-align: center;
+
+        box-shadow: 0 0 40px rgba(255, 255, 255, .15);
+
+}
+
+.title {
+
+        font-size: 60px;
+
+        color: #ff4da6;
+
+        text-shadow:
+
+                0 0 20px hotpink,
+
+                0 0 45px deeppink;
+
+        margin-block-end: 20px;
+
+        animation: glow 2s infinite alternate;
+
+}
+
+@keyframes glow {
+
+        from {
+
+                text-shadow: 0 0 15px hotpink;
+
+        }
+
+        to {
+
+                text-shadow:
+
+                        0 0 35px deeppink,
+
+                        0 0 70px hotpink;
+
+        }
+
+}
+
+.container h2 {
+
+        font-size: 34px;
+
+        margin-block-end: 20px;
+
+}
+
+.container p {
+
+        font-size: 22px;
+
+        line-height: 38px;
+
+        margin-block-end: 35px;
+
+}
+
+.ring {
+
+        font-size: 90px;
+
+        animation: ringMove 2s infinite ease-in-out;
+
+        margin: 25px 0;
+
+}
+
+@keyframes ringMove {
+
+        0% {
+
+                transform: translateY(0);
+
+        }
+
+        50% {
+
+                transform: translateY(-15px) scale(1.1);
+
+        }
+
+        100% {
+
+                transform: translateY(0);
+
+        }
+
+}
+
+button {
+
+        padding: 18px 45px;
+
+        font-size: 22px;
+
+        border: none;
+
+        border-radius: 50px;
+
+        background: #ff1493;
+
+        color: white;
+
+        cursor: pointer;
+
+        transition: .4s;
+
+}
+
+button:hover {
+
+        transform: scale(1.08);
+
+        box-shadow:
+
+                0 0 20px hotpink,
+
+                0 0 40px deeppink;
+
+}
+
+#finalMessage {
+
+        display: none;
+
+        margin-block-start: 40px;
+
+        padding: 30px;
+
+        border-radius: 20px;
+
+        background: rgba(255, 255, 255, .15);
+
+}
+
+.star {
+
+        position: absolute;
+
+        background: white;
+
+        border-radius: 50%;
+
+        animation: twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle {
+
+        from {
+
+                opacity: .2;
+
+        }
+
+        to {
+
+                opacity: 1;
+
+        }
+
+}
+
+.flower {
+
+        position: absolute;
+
+        inset-block-start: -60px;
+
+        animation: flowerFall linear forwards;
+
+}
+
+@keyframes flowerFall {
+
+        0% {
+
+                transform: translateY(-50px);
+
+                opacity: 0;
+
+        }
+
+        100% {
+
+                transform: translateY(110vh);
+
+                opacity: 0;
+
+        }
+
+}
+
+.fHeart {
+
+        position: absolute;
+
+        inset-block-start: -50px;
+
+        animation: heartFall linear forwards;
+
+}
+
+@keyframes heartFall {
+
+        0% {
+
+                transform: translateY(-50px);
+
+                opacity: 0;
+
+        }
+
+        100% {
+
+                transform: translateY(110vh);
+
+                opacity: 0;
+
+        }
+
+}
+
+@media(max-width:768px) {
+
+        .title {
+
+                font-size: 38px;
+
+        }
+
+        .container h2 {
+
+                font-size: 24px;
+
+        }
+
+        .container p {
+
+                font-size: 18px;
+
+                line-height: 30px;
+
+        }
+
+        .ring {
+
+                font-size: 60px;
+
+        }
+
+}
