@@ -73,7 +73,7 @@ function checkPassword() {
 
         setTimeout(() => {
 
-            window.location.href = "password1.html";
+           window.location.href = "html/password1.html";
 
         }, 1200);
 
